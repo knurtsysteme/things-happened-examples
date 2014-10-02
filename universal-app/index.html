@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>{{app.title}}</title>
+</head>
+<body ng-controller="MyCtrl">
+
+	<div ng-show="area=='login'">
+	  <h1>{{app.titlesecret}}</h1>
+	  <form ng-submit="login()">
+		  <input type="text" ng-model="secret" placeholder="passwort" pattern=".+" required><br />
+		  <button type="submit">{{app.login}}</but297992ton>
+	  </form>
+	</div>
+	<div ng-show="area!='login'">
+		<button ng-click="logout()">{{app.logout}}</button>
+	</div>
+
+	<div ng-show="area=='input'">
+		<h1>{{app.title}}</h1>
+		<div>
+		  <form ng-submit="submit(subject)">
+			<p ng-repeat="input in inputs">
+			    <label>{{input.label}}<br />
+		    		<input ng-model="subject[input.name]" type="{{input.type}}" placeholder="{{input.placeholder}}" value="{{input.value}}" pattern="{{input.pattern}}"/> 
+		    	</label>
+		    </p>
+		    <button type="submit">{{app.submit}}</button>
+		  </form>
+		</div>
+		<div><button ng-click="showOutput()">{{app.showoutput}}</button></div>
+	</div>
+
+	<div ng-show="area=='output'">
+		<h1>{{app.title}}</h1>
+		<table>
+		  <thead>
+		  	<tr>
+		  	    <th>{{app.date}}</th>
+		  		<th ng-repeat="input in inputs" ng-bind="input.label" />
+		  	</tr>
+		  </thead>
+		  <tbody>
+		  	<tr ng-repeat="subject in subjects|orderBy:'_date':'desc'">
+		  	    <td ng-bind="subject._date" />
+		  		<td ng-repeat="input in inputs" ng-bind="subject[input.name]" />
+		  	</tr>
+		  </tbody>
+		</table>
+		<button ng-click="showInput()">{{app.showinput}}</button>
+	</div>
+
+	<script src="angular.min.js"></script>
+	<script src="angular-cookie.min.js"></script>
+	<script src="things-happened-util.min.js"></script>
+	<script src="things-happened-angular.min.js"></script>
+	<script src="app-config.js"></script>
+	<script src="app.js"></script>
+</html>
