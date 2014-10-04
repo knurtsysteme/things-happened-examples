@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="things-happened-examples" basedir=".">
+	<target name="universal-app: open local in chrome" description="open live example in google chrome">
+    <exec executable="google-chrome">
+      <arg line="-url http://things-happened.org/examples/universal-app/" />
+    </exec>
+	</target>
+</project>

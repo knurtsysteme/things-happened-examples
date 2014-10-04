@@ -1,23 +1,9 @@
-/* describe your app here
- */
-things.simpleauth = {};
+// describe your app here
+things.univ = {};
 
-/* stupid text labels
- */
-things.simpleauth.app = {};
-things.simpleauth.app.title = 'Dishes eaten';
-things.simpleauth.app.date = 'date';
-things.simpleauth.app.login = 'login';
-things.simpleauth.app.logout = 'logout';
-things.simpleauth.app.submit = 'submit';
-things.simpleauth.app.showoutput = 'Show all dishes eaten';
-things.simpleauth.app.showinput = 'Add a dish eaten';
-things.simpleauth.app.titlesecret = 'Your secret';
-
-/* describe input fields you 
- * like to deal with in your app.
- */
-things.simpleauth.inputs = [{
+// describe input fields you 
+// like to deal with in your app.
+things.univ.inputs = [{
 	name: 'name',
 	label: 'name of the dish'
 },{
@@ -27,10 +13,31 @@ things.simpleauth.inputs = [{
 	pattern: '[0-9]'
 }];
 
-/* basic adding properties
- */
-things.simpleauth._cn = 'dishes';
-things.simpleauth._state = 'eaten';
+// basic adding properties
+things.univ._cn = 'dishes';
+things.univ._state = 'eaten';
+
+// general options
+things.univ.options = {};
+// store things in a timeline or all as new node?
+// @see things.univ._id
+things.univ.options.timeline = true;
+
+/* OPTIONAL INPUTS
+
+//static text labels
+
+things.univ.app = {};
+things.univ.app.title = 'Dishes eaten';
+things.univ.app.date = 'date';
+things.univ.app.login = 'login';
+things.univ.app.logout = 'logout';
+things.univ.app.submit = 'submit';
+things.univ.app.showoutput = 'Show all dishes eaten';
+things.univ.app.showinput = 'Add a dish eaten';
+things.univ.app.titlesecret = 'Your secret';
+things.univ.app.showtree = 'show tree';
 
 // optional id add your thing to:
-// things.simpleauth._id = '542d9674e427aa815c0d9a2b';
+things.univ._id = '542d9674e427aa815c0d9a2b';
+*/

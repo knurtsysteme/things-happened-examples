@@ -21,10 +21,10 @@
 	<div ng-show="area=='input'">
 		<h1>{{app.title}}</h1>
 		<div>
-		  <form ng-submit="submit(subject)">
+		  <form ng-submit="submit(thing)">
 			<p ng-repeat="input in inputs">
 			    <label>{{input.label}}<br />
-		    		<input ng-model="subject[input.name]" type="{{input.type}}" placeholder="{{input.placeholder}}" value="{{input.value}}" pattern="{{input.pattern}}"/> 
+		    		<input ng-model="thing[input.name]" type="{{input.type}}" placeholder="{{input.placeholder}}" value="{{input.value}}" pattern="{{input.pattern}}"/> 
 		    	</label>
 		    </p>
 		    <button type="submit">{{app.submit}}</button>
@@ -35,6 +35,8 @@
 
 	<div ng-show="area=='output'">
 		<h1>{{app.title}}</h1>
+		<button ng-click="showInput()">{{app.showinput}}</button>
+    <a ng-show="lastThing" ng-href="http://things-happened.org/examples/svg-tree/?_cn={{lastThing._cn}}&_rid={{lastThing._rid}}">{{app.showtree}}</a>
 		<table>
 		  <thead>
 		  	<tr>
@@ -43,13 +45,12 @@
 		  	</tr>
 		  </thead>
 		  <tbody>
-		  	<tr ng-repeat="subject in subjects|orderBy:'_date':'desc'">
-		  	    <td ng-bind="subject._date" />
-		  		<td ng-repeat="input in inputs" ng-bind="subject[input.name]" />
+		  	<tr ng-repeat="thing in things|orderBy:'_date':'desc'">
+		  	    <td ng-bind="thing._date" />
+		  		<td ng-repeat="input in inputs" ng-bind="thing[input.name]" />
 		  	</tr>
 		  </tbody>
 		</table>
-		<button ng-click="showInput()">{{app.showinput}}</button>
 	</div>
 
 	<script src="angular.min.js"></script>
