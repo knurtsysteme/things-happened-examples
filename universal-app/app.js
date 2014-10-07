@@ -1,12 +1,12 @@
-things.config.serviceurl = 'http://things-happened.org'
+things.config.serviceurl = things.config.serviceurl || 'http://things-happened.org'
 angular.module('myApp', [ 'thingsHappened', 'ipCookie' ]).controller('MyCtrl', [ 'ipCookie', '$scope', 'thingsDao', function(ipCookie, $scope, thingsDao) {
   var cookieOptions = {
     expires : 365
   };
 
   var setStaticText = function() {
-    $scope.app = things.univ.app || {};
-    $scope.app.title = $scope.app.title || things.univ._cn + ' ' + things.univ._state;
+    $scope.app = $scope.univ.app || {};
+    $scope.app.title = $scope.app.title || $scope.univ._cn + ' ' + $scope.univ._state;
     $scope.app.date = $scope.app.date || 'date';
     $scope.app.login = $scope.app.login || 'login';
     $scope.app.logout = $scope.app.logout || 'logout';
@@ -19,7 +19,7 @@ angular.module('myApp', [ 'thingsHappened', 'ipCookie' ]).controller('MyCtrl', [
 
   var setInputs = function() {
     $scope.inputs = [];
-    angular.forEach(things.univ.inputs, function(input) {
+    angular.forEach($scope.univ.inputs, function(input) {
       input.type = input.type || 'text';
       input.placeholder = input.placeholder || '';
       input.pattern = input.pattern || '.*';
@@ -47,8 +47,9 @@ angular.module('myApp', [ 'thingsHappened', 'ipCookie' ]).controller('MyCtrl', [
   };
 
   var showOutput = function() {
-    var query = things.query.select(things.univ._cn).got(things.univ._state);
-    angular.forEach(things.univ.inputs, function(input) {
+    things.config.secret = $scope.secret;
+    var query = things.query.select($scope.univ._cn).got($scope.univ._state);
+    angular.forEach($scope.univ.inputs, function(input) {
       query.whose(input.name).exists();
     });
     thingsDao.get(query).success(function(things) {
@@ -57,30 +58,56 @@ angular.module('myApp', [ 'thingsHappened', 'ipCookie' ]).controller('MyCtrl', [
     });
   };
 
+  var getCookieLastThingKey = function() {
+    return 'lastThing_' + $scope.univ.title.toLowerCase().replace(/[^a-z]/g, '');
+  }
+
   var submit = function(thing) {
     things.config.secret = $scope.secret;
-    if (things.univ.options.timeline && ipCookie('lastThing')) {
-      thing._id = ipCookie('lastThing')._id;
-    } else if (things.univ._id) {
-      thing._id = things.univ._id;
+    if ($scope.univ.options.timeline && ipCookie(getCookieLastThingKey())) {
+      thing._id = ipCookie(getCookieLastThingKey())._id;
+    } else if ($scope.univ._id) {
+      thing._id = $scope.univ._id;
     }
-    var query = things.query.add(thing).to(things.univ._cn).being(things.univ._state);
+    var query = things.query.add(thing).to($scope.univ._cn).being($scope.univ._state);
     thingsDao.add(query).success(function(thing) {
-      ipCookie('lastThing', thing, cookieOptions);
+      ipCookie(getCookieLastThingKey(), thing, cookieOptions);
       $scope.lastThing = thing;
       $scope.showOutput();
     });
   };
 
+  var univChanged = function() {
+    setStaticText();
+    $scope.things = [];
+    $scope.thing = {};
+    setInputs();
+    setInputs();
+    showInput();
+  };
+
+  var refreshCookies = function() {
+    if (ipCookie('secret')) {
+      ipCookie('secret', ipCookie('secret'), cookieOptions);
+    }
+  };
+
+  $scope.univs = things.univs;
+  $scope.univ = things.univs[0];
   setStaticText();
   $scope.secret = ipCookie('secret');
+  refreshCookies();
   $scope.area = $scope.secret ? 'input' : 'login';
   $scope.things = [];
   $scope.thing = {};
+  setInputs();
   setInputs();
   $scope.login = login;
   $scope.logout = logout;
   $scope.showInput = showInput;
   $scope.showOutput = showOutput;
   $scope.submit = submit;
+
+  $scope.$watch('univ', univChanged);
+
 } ]);
