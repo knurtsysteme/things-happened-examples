@@ -50,16 +50,26 @@ angular.module('myApp', [ 'thingsHappened', 'ipCookie' ]).controller('MyCtrl', [
     things.config.secret = $scope.secret;
     var query = things.query.select($scope.univ._cn).got($scope.univ._state);
     angular.forEach($scope.univ.inputs, function(input) {
-      query.whose(input.name).exists();
+      if (!input.value) {
+        query.whose(input.name).exists();
+      }
     });
     thingsDao.get(query).success(function(things) {
+      // set default value to things where default value not given
+      angular.forEach(things, function(thing) {
+        angular.forEach($scope.univ.inputs, function(input) {
+          if (input.value && !thing[input.name]) {
+            thing[input.name] = input.value;
+          }
+        });
+      });
       $scope.things = things;
       $scope.area = 'output';
     });
   };
 
   var getCookieLastThingKey = function() {
-    return 'lastThing_' + $scope.univ.title.toLowerCase().replace(/[^a-z]/g, '');
+    return 'lastThing_' + $scope.app.title.toLowerCase().replace(/[^a-z]/g, '');
   }
 
   var submit = function(thing) {
@@ -92,6 +102,16 @@ angular.module('myApp', [ 'thingsHappened', 'ipCookie' ]).controller('MyCtrl', [
     }
   };
 
+  var appendCss = function() {
+    if ($scope.univ.css) {
+      var fileref = document.createElement("link");
+      fileref.setAttribute("rel", "stylesheet");
+      fileref.setAttribute("type", "text/css");
+      fileref.setAttribute("href", $scope.univ.css);
+      document.getElementsByTagName("head")[0].appendChild(fileref);
+    }
+  };
+
   $scope.univs = things.univs;
   $scope.univ = things.univs[0];
   setStaticText();
@@ -101,13 +121,12 @@ angular.module('myApp', [ 'thingsHappened', 'ipCookie' ]).controller('MyCtrl', [
   $scope.things = [];
   $scope.thing = {};
   setInputs();
-  setInputs();
   $scope.login = login;
   $scope.logout = logout;
   $scope.showInput = showInput;
   $scope.showOutput = showOutput;
   $scope.submit = submit;
-
+  appendCss();
   $scope.$watch('univ', univChanged);
 
 } ]);

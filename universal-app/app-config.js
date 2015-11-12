@@ -1,6 +1,6 @@
 // describe your apps here
 things.univs = [ {
-  title : 'dishes eaten',
+  css : 'app.css',
   // describe input fields you
   // like to deal with in your app.
   inputs : [ {

@@ -1,0 +1,363 @@
+.rating-10.weight-10 {
+background: rgba(0,255,0,1);
+}
+.rating-10.weight-9 {
+background: rgba(0,255,0,0.9);
+}
+.rating-10.weight-8 {
+background: rgba(0,255,0,0.8);
+}
+.rating-10.weight-7 {
+background: rgba(0,255,0,0.7);
+}
+.rating-10.weight-6 {
+background: rgba(0,255,0,0.6);
+}
+.rating-10.weight-5 {
+background: rgba(0,255,0,0.5);
+}
+.rating-10.weight-4 {
+background: rgba(0,255,0,0.4);
+}
+.rating-10.weight-3 {
+background: rgba(0,255,0,0.3);
+}
+.rating-10.weight-2 {
+background: rgba(0,255,0,0.2);
+}
+.rating-10.weight-1 {
+background: rgba(0,255,0,0.1);
+}
+.rating-10.weight-0 {
+background: rgba(0,255,0,0);
+}
+.rating-9.weight-10 {
+background: rgba(60,255,0,1);
+}
+.rating-9.weight-9 {
+background: rgba(60,255,0,0.9);
+}
+.rating-9.weight-8 {
+background: rgba(60,255,0,0.8);
+}
+.rating-9.weight-7 {
+background: rgba(60,255,0,0.7);
+}
+.rating-9.weight-6 {
+background: rgba(60,255,0,0.6);
+}
+.rating-9.weight-5 {
+background: rgba(60,255,0,0.5);
+}
+.rating-9.weight-4 {
+background: rgba(60,255,0,0.4);
+}
+.rating-9.weight-3 {
+background: rgba(60,255,0,0.3);
+}
+.rating-9.weight-2 {
+background: rgba(60,255,0,0.2);
+}
+.rating-9.weight-1 {
+background: rgba(60,255,0,0.1);
+}
+.rating-9.weight-0 {
+background: rgba(60,255,0,0);
+}
+.rating-8.weight-10 {
+background: rgba(120,255,0,1);
+}
+.rating-8.weight-9 {
+background: rgba(120,255,0,0.9);
+}
+.rating-8.weight-8 {
+background: rgba(120,255,0,0.8);
+}
+.rating-8.weight-7 {
+background: rgba(120,255,0,0.7);
+}
+.rating-8.weight-6 {
+background: rgba(120,255,0,0.6);
+}
+.rating-8.weight-5 {
+background: rgba(120,255,0,0.5);
+}
+.rating-8.weight-4 {
+background: rgba(120,255,0,0.4);
+}
+.rating-8.weight-3 {
+background: rgba(120,255,0,0.3);
+}
+.rating-8.weight-2 {
+background: rgba(120,255,0,0.2);
+}
+.rating-8.weight-1 {
+background: rgba(120,255,0,0.1);
+}
+.rating-8.weight-0 {
+background: rgba(120,255,0,0);
+}
+.rating-7.weight-10 {
+background: rgba(165,255,0,1);
+}
+.rating-7.weight-9 {
+background: rgba(165,255,0,0.9);
+}
+.rating-7.weight-8 {
+background: rgba(165,255,0,0.8);
+}
+.rating-7.weight-7 {
+background: rgba(165,255,0,0.7);
+}
+.rating-7.weight-6 {
+background: rgba(165,255,0,0.6);
+}
+.rating-7.weight-5 {
+background: rgba(165,255,0,0.5);
+}
+.rating-7.weight-4 {
+background: rgba(165,255,0,0.4);
+}
+.rating-7.weight-3 {
+background: rgba(165,255,0,0.3);
+}
+.rating-7.weight-2 {
+background: rgba(165,255,0,0.2);
+}
+.rating-7.weight-1 {
+background: rgba(165,255,0,0.1);
+}
+.rating-7.weight-0 {
+background: rgba(165,255,0,0);
+}
+.rating-6.weight-10 {
+background: rgba(210,255,0,1);
+}
+.rating-6.weight-9 {
+background: rgba(210,255,0,0.9);
+}
+.rating-6.weight-8 {
+background: rgba(210,255,0,0.8);
+}
+.rating-6.weight-7 {
+background: rgba(210,255,0,0.7);
+}
+.rating-6.weight-6 {
+background: rgba(210,255,0,0.6);
+}
+.rating-6.weight-5 {
+background: rgba(210,255,0,0.5);
+}
+.rating-6.weight-4 {
+background: rgba(210,255,0,0.4);
+}
+.rating-6.weight-3 {
+background: rgba(210,255,0,0.3);
+}
+.rating-6.weight-2 {
+background: rgba(210,255,0,0.2);
+}
+.rating-6.weight-1 {
+background: rgba(210,255,0,0.1);
+}
+.rating-6.weight-0 {
+background: rgba(210,255,0,0);
+}
+.rating-5.weight-10 {
+background: rgba(255,255,0,1);
+}
+.rating-5.weight-9 {
+background: rgba(255,255,0,0.9);
+}
+.rating-5.weight-8 {
+background: rgba(255,255,0,0.8);
+}
+.rating-5.weight-7 {
+background: rgba(255,255,0,0.7);
+}
+.rating-5.weight-6 {
+background: rgba(255,255,0,0.6);
+}
+.rating-5.weight-5 {
+background: rgba(255,255,0,0.5);
+}
+.rating-5.weight-4 {
+background: rgba(255,255,0,0.4);
+}
+.rating-5.weight-3 {
+background: rgba(255,255,0,0.3);
+}
+.rating-5.weight-2 {
+background: rgba(255,255,0,0.2);
+}
+.rating-5.weight-1 {
+background: rgba(255,255,0,0.1);
+}
+.rating-5.weight-0 {
+background: rgba(255,255,0,0);
+}
+.rating-4.weight-10 {
+background: rgba(255,195,0,1);
+}
+.rating-4.weight-9 {
+background: rgba(255,195,0,0.9);
+}
+.rating-4.weight-8 {
+background: rgba(255,195,0,0.8);
+}
+.rating-4.weight-7 {
+background: rgba(255,195,0,0.7);
+}
+.rating-4.weight-6 {
+background: rgba(255,195,0,0.6);
+}
+.rating-4.weight-5 {
+background: rgba(255,195,0,0.5);
+}
+.rating-4.weight-4 {
+background: rgba(255,195,0,0.4);
+}
+.rating-4.weight-3 {
+background: rgba(255,195,0,0.3);
+}
+.rating-4.weight-2 {
+background: rgba(255,195,0,0.2);
+}
+.rating-4.weight-1 {
+background: rgba(255,195,0,0.1);
+}
+.rating-4.weight-0 {
+background: rgba(255,195,0,0);
+}
+.rating-3.weight-10 {
+background: rgba(255,130,0,1);
+}
+.rating-3.weight-9 {
+background: rgba(255,130,0,0.9);
+}
+.rating-3.weight-8 {
+background: rgba(255,130,0,0.8);
+}
+.rating-3.weight-7 {
+background: rgba(255,130,0,0.7);
+}
+.rating-3.weight-6 {
+background: rgba(255,130,0,0.6);
+}
+.rating-3.weight-5 {
+background: rgba(255,130,0,0.5);
+}
+.rating-3.weight-4 {
+background: rgba(255,130,0,0.4);
+}
+.rating-3.weight-3 {
+background: rgba(255,130,0,0.3);
+}
+.rating-3.weight-2 {
+background: rgba(255,130,0,0.2);
+}
+.rating-3.weight-1 {
+background: rgba(255,130,0,0.1);
+}
+.rating-3.weight-0 {
+background: rgba(255,130,0,0);
+}
+.rating-2.weight-10 {
+background: rgba(255,65,0,1);
+}
+.rating-2.weight-9 {
+background: rgba(255,65,0,0.9);
+}
+.rating-2.weight-8 {
+background: rgba(255,65,0,0.8);
+}
+.rating-2.weight-7 {
+background: rgba(255,65,0,0.7);
+}
+.rating-2.weight-6 {
+background: rgba(255,65,0,0.6);
+}
+.rating-2.weight-5 {
+background: rgba(255,65,0,0.5);
+}
+.rating-2.weight-4 {
+background: rgba(255,65,0,0.4);
+}
+.rating-2.weight-3 {
+background: rgba(255,65,0,0.3);
+}
+.rating-2.weight-2 {
+background: rgba(255,65,0,0.2);
+}
+.rating-2.weight-1 {
+background: rgba(255,65,0,0.1);
+}
+.rating-2.weight-0 {
+background: rgba(255,65,0,0);
+}
+.rating-1.weight-10 {
+background: rgba(255,0,0,1);
+}
+.rating-1.weight-9 {
+background: rgba(255,0,0,0.9);
+}
+.rating-1.weight-8 {
+background: rgba(255,0,0,0.8);
+}
+.rating-1.weight-7 {
+background: rgba(255,0,0,0.7);
+}
+.rating-1.weight-6 {
+background: rgba(255,0,0,0.6);
+}
+.rating-1.weight-5 {
+background: rgba(255,0,0,0.5);
+}
+.rating-1.weight-4 {
+background: rgba(255,0,0,0.4);
+}
+.rating-1.weight-3 {
+background: rgba(255,0,0,0.3);
+}
+.rating-1.weight-2 {
+background: rgba(255,0,0,0.2);
+}
+.rating-1.weight-1 {
+background: rgba(255,0,0,0.1);
+}
+.rating-1.weight-0 {
+background: rgba(255,0,0,0);
+}
+.rating-0.weight-10 {
+background: rgba(255,255,255,1);
+}
+.rating-0.weight-9 {
+background: rgba(255,255,255,0.9);
+}
+.rating-0.weight-8 {
+background: rgba(255,255,255,0.8);
+}
+.rating-0.weight-7 {
+background: rgba(255,255,255,0.7);
+}
+.rating-0.weight-6 {
+background: rgba(255,255,255,0.6);
+}
+.rating-0.weight-5 {
+background: rgba(255,255,255,0.5);
+}
+.rating-0.weight-4 {
+background: rgba(255,255,255,0.4);
+}
+.rating-0.weight-3 {
+background: rgba(255,255,255,0.3);
+}
+.rating-0.weight-2 {
+background: rgba(255,255,255,0.2);
+}
+.rating-0.weight-1 {
+background: rgba(255,255,255,0.1);
+}
+.rating-0.weight-0 {
+background: rgba(255,255,255,0);
+}

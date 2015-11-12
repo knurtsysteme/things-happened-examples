@@ -23,9 +23,8 @@
   <div ng-show="area=='input'">
     <h1>{{app.title}}</h1>
     <div>
-    <label>{{input.otherapps}}<br />
-    <select ng-model="univ" ng-options="u as u.title for u in univs"></select>
-    </label>
+      <label>{{input.otherapps}}<br /> <select ng-model="univ" ng-options="u as u.app.title for u in univs"></select>
+      </label>
     </div>
     <div>
       <form ng-submit="submit(thing)">

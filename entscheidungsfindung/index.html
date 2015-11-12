@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>{{app.title}}</title>
+<link rel="stylesheet" type="text/css" href="app.css">
+<link rel="stylesheet" type="text/css" href="color-theme.css">
+</head>
+<body ng-controller="MyCtrl">
+
+  <table>
+    <thead>
+      <tr>
+        <th rowspan="2">Ich möchte
+          <button ng-click="addFactor()">+1</button>
+        </th>
+        <th rowspan="2">sehr</th>
+        <th colspan="{{entscheidungsfindung.possibilities.length}}">eine Entscheidung fällen zwischen
+          <button ng-click="addPossibility()">+1</button>
+        </th>
+        <th rowspan="2" ng-show="entscheidungsfindung.factors.length > 2"></th>
+      </tr>
+      <tr>
+        <th ng-repeat="possibility in entscheidungsfindung.possibilities track by $index"><input type="text" ng-model="possibility.name"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="factor in entscheidungsfindung.factors">
+        <th><input type="text" ng-model="factor.name"></th>
+        <td><input type="number" min="1" max="10" step="1" ng-model="factor.weight"></td>
+        <td ng-repeat="rating in factor.ratings" ng-class="['rating-' + rating.value, 'weight-' + factor.weight]"><input type="number" min="1" max="10" step="1" ng-model="rating.value"></td>
+        <td ng-show="entscheidungsfindung.factors.length > 2"><button ng-click="deleteFactor($index)">← löschen</button></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="2">Total:</th>
+        <th ng-repeat="possibility in entscheidungsfindung.possibilities track by $index">{{total($index)}}</th>
+        <th ng-show="entscheidungsfindung.factors.length > 2 && entscheidungsfindung.possibilities.length"></th>
+      </tr> 
+      <tr ng-show="entscheidungsfindung.possibilities.length > 2">
+        <th colspan="2"></th>
+        <th ng-repeat="possibility in entscheidungsfindung.possibilities track by $index"><button ng-click="deletePossibility($index)">↑↑↑ löschen ↑↑↑</button></th>
+        <th ng-show="entscheidungsfindung.factors.length > 2"></th>
+      </tr> 
+    </tfoot>
+  </table>
+
+
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</html>
